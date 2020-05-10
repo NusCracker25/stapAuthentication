@@ -1,0 +1,23 @@
+{
+  "name": "stapauthentication",
+  "version": "0.1.0",
+  "description": "this is the app for user managmenent and to manage their authentication",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NusCracker25/stapAuthentication.git"
+  },
+  "keywords": [
+    "authentication",
+    "nodejs"
+  ],
+  "author": "NutsCracker25",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NusCracker25/stapAuthentication/issues"
+  },
+  "homepage": "https://github.com/NusCracker25/stapAuthentication#readme"
+}
