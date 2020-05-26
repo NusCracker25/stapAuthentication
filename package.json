@@ -8,14 +8,17 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "nodemon": "^2.0.4",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "winston": "^3.2.1",
+    "winston-mongodb": "^5.0.1"
   },
   "repository": {
     "type": "git",

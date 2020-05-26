@@ -1,0 +1,26 @@
+{"message":"this is an info","level":"info","service":"AuthLogger","timestamp":"2020-05-26T04:53:14.269Z"}
+{"message":"this is a warning","level":"warn","service":"AuthLogger","timestamp":"2020-05-26T04:53:14.271Z"}
+{"message":"this is an error log","level":"error","service":"AuthLogger","timestamp":"2020-05-26T04:53:14.271Z"}
+{"level":"info","message":"this is another info log","timestamp":"2020-05-26T04:53:14.273Z"}
+{"message":"Policy for JWT is selected","level":"info","service":"AuthLogger","timestamp":"2020-05-26T04:53:14.321Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2020-05-26T04:53:14.328Z"}
+{"message":"Connected to database is done mongodb://localhost:27017/meanauth","level":"info","service":"AuthLogger","timestamp":"2020-05-26T04:53:14.345Z"}
+{"message":"this is an info","level":"info","service":"AuthLogger","timestamp":"2020-05-26T04:58:51.764Z"}
+{"message":"this is a warning","level":"warn","service":"AuthLogger","timestamp":"2020-05-26T04:58:51.770Z"}
+{"message":"this is an error log","level":"error","service":"AuthLogger","timestamp":"2020-05-26T04:58:51.771Z"}
+{"level":"info","message":"this is another info log","timestamp":"2020-05-26T04:58:51.773Z"}
+{"message":"Policy for JWT is selected","level":"info","service":"AuthLogger","timestamp":"2020-05-26T04:58:51.833Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2020-05-26T04:58:51.845Z"}
+{"message":"Connected to database is done mongodb://localhost:27017/meanauth","level":"info","service":"AuthLogger","timestamp":"2020-05-26T04:58:51.879Z"}
+{"message":"Policy for JWT is selected","level":"info","service":"AuthLogger","timestamp":"2020-05-26T06:31:04.173Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2020-05-26T06:31:04.182Z"}
+{"message":"Connected to database is done mongodb://localhost:27017/meanauth","level":"info","service":"AuthLogger","timestamp":"2020-05-26T06:31:04.197Z"}
+{"message":"Policy for JWT is selected","level":"info","service":"AuthLogger","timestamp":"2020-05-26T06:32:27.414Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2020-05-26T06:32:27.419Z"}
+{"message":"Connected to database is done mongodb://localhost:27017/meanauth","level":"info","service":"AuthLogger","timestamp":"2020-05-26T06:32:27.429Z"}
+{"message":"Policy for JWT is selected","level":"info","service":"AuthLogger","timestamp":"2020-05-26T06:33:40.916Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2020-05-26T06:33:40.920Z"}
+{"message":"Connected to database is done mongodb://localhost:27017/meanauth","level":"info","service":"AuthLogger","timestamp":"2020-05-26T06:33:40.931Z"}
+{"message":"Policy for JWT is selected","level":"info","service":"AuthLogger","timestamp":"2020-05-26T06:34:07.756Z"}
+{"level":"info","message":"Server started on port 3000","timestamp":"2020-05-26T06:34:07.761Z"}
+{"message":"Connected to database is done mongodb://localhost:27017/meanauth","level":"info","service":"AuthLogger","timestamp":"2020-05-26T06:34:07.778Z"}

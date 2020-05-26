@@ -8,7 +8,10 @@ const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+
+// configuration are imported
 const config = require('./config/database')
+const logger = require('./config/logger');
 
 /* refers to external file where actual routes for users management will be described */
 const users = require('./routes/users');
@@ -17,22 +20,26 @@ const users = require('./routes/users');
  * connection to the database itself.
  * settings for connection are read from a config file
  */
-mongoose.connect(config.database);
+mongoose.connect(config.database ,
+                 {
+                    useNewUrlParser: true,
+                    useUnifiedTopology: true
+                });
 //detection of connection
 mongoose.connection.on('connected', ()=>{
-    console.log('Connected to database is done '+config.database);
+    logger.info( 'Connected to database is done '+ config.database);
 });
 //detection of potential error with database
 mongoose.connection.on('error', (err)=>{
-    console.log('Database error: '+err);
+    logger.log('error','Database error: '+err);
 });
 /*
  * creation of the server itself
  * the port to be used is 3000 (should be the one taken from a config file or environment variable - when using with docker)
  */
 const app = express();
-// port number
-const port = 3000;
+// port number either environment variable of 3000
+const port = process.env.PORT || 3000;
 /**
  * adding middleware for the server
  */
@@ -53,7 +60,7 @@ app.use(passport.session());
 
 /** definition of the strategy to be used */
 require('./config/passport')(passport);
-console.log('Policy for JWT is selected');
+logger.info('Policy for JWT is selected');
 
 /** add the users/routes management in here */
 app.use('/users', users);
@@ -63,6 +70,7 @@ app.use('/users', users);
  the creation of routes follow the standard HTTP keyword for transaction
  */
 app.get('/', (req,res)=>{
+    logger.info('Reached an invalid end point');
     res.send('Invalid end point');
 })
 
@@ -70,5 +78,5 @@ app.get('/', (req,res)=>{
 //the server is now listening on the port passed in parameter
 // upon event, the callback function is used (note the usage of arrow function here)
 app.listen(port, ()=>{
-    console.log('Server started on port '+port);
+    logger.log('info','Server started on port '+port);
 });
