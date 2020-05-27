@@ -8,9 +8,10 @@ const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 
 // configuration are imported
-const config = require('./config/database')
+const config = require('./config/database');
 const logger = require('./config/logger');
 
 /* refers to external file where actual routes for users management will be described */
@@ -20,14 +21,15 @@ const users = require('./routes/users');
  * connection to the database itself.
  * settings for connection are read from a config file
  */
-mongoose.connect(config.database.database ,
+mongoose.connect(config.database.url ,
                  {
                     useNewUrlParser: true,
                     useUnifiedTopology: true
                 });
 //detection of connection
+// TODO: handle error 
 mongoose.connection.on('connected', ()=>{
-    logger.info( 'Connected to database is done '+ config.database.database);
+    logger.info( 'Connected to database is done '+ config.database.url);
 });
 //detection of potential error with database
 mongoose.connection.on('error', (err)=>{
@@ -43,6 +45,10 @@ const port = process.env.PORT || 3000;
 /**
  * adding middleware for the server
  */
+/* add the morgan middleware for logging server activities */
+
+app.use(morgan("combined", {stream: logger.stream}));
+
 /* Cors to allow for external domain usage */
 app.use(cors());
 

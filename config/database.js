@@ -5,6 +5,9 @@ module.exports={
         logcollection: 'authlog'
     },
     logging:{
+        store: {
+            db: false
+        },
         folder : 'logs'
     },
     secret:'asecret'
