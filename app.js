@@ -20,14 +20,14 @@ const users = require('./routes/users');
  * connection to the database itself.
  * settings for connection are read from a config file
  */
-mongoose.connect(config.database ,
+mongoose.connect(config.database.database ,
                  {
                     useNewUrlParser: true,
                     useUnifiedTopology: true
                 });
 //detection of connection
 mongoose.connection.on('connected', ()=>{
-    logger.info( 'Connected to database is done '+ config.database);
+    logger.info( 'Connected to database is done '+ config.database.database);
 });
 //detection of potential error with database
 mongoose.connection.on('error', (err)=>{

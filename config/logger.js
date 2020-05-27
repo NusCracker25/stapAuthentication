@@ -2,10 +2,17 @@
 * configuration for logger.
 * logger used is winston package
 */
+const path = require('path');
+const fs = require('fs');
+const appRoot = require('app-root-path');
+const clfDate = require('clf-date');
 
 const winston = require('winston');
 const winstonMdB = require('winston-mongodb');
 const config = require('./database');
+
+
+
 
 //creation of the logger
 // this logger sends all info level message to the console
@@ -30,9 +37,9 @@ const logger = winston.createLogger({
              winston.format.colorize()//,
        // this.winstonConsoleFormat()
          )
-     })/* ,
+     }) ,
        new winstonMdB.MongoDB({
-           db:config.database,
+           db:config.database.url,
            collection: config.logcollection,
            level: 'info',
            options: { 
@@ -43,7 +50,7 @@ const logger = winston.createLogger({
                 winston.format.timestamp(), winston.format.json(),
                 winston.format.metadata({fillExcept: ['timestamp', 'service', 'level', 'message']}),
             )
-        }) */
+        })
         
 
     ]
