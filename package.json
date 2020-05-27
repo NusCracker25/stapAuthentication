@@ -8,16 +8,20 @@
     "start": "node app"
   },
   "dependencies": {
+    "app-root-path": "^3.0.0",
     "bcryptjs": "*",
     "body-parser": "*",
+    "clf-date": "^0.2.0",
     "cors": "*",
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "passport": "*",
     "passport-jwt": "*",
     "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2",
     "winston-mongodb": "^5.0.1"
   },
   "repository": {
