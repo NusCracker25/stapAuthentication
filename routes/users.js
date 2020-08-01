@@ -10,6 +10,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 /** import the definition of User */
 const User = require('../models/user');
+const logger = require('./config/logger');
 
 /*
 routes are created and register
@@ -96,6 +97,12 @@ router.post('/authenticate', (req, res, next) =>{
  * provides the detail on the users profile
  */
 router.get('/profile', passport.authenticate('jwt', {session:false}),  (req, res, next)=>{
+    // reference to user is within the request itself -burried into the jwt
+    // TODO: need to understand why the passport is still in here
+    res.json({user: req.user});
+});
+
+router.post('/update',passport.authenticate('jwt', {session:false}),  (req, res, next)=>{
     // reference to user is within the request itself -burried into the jwt
     // TODO: need to understand why the passport is still in here
     res.json({user: req.user});
